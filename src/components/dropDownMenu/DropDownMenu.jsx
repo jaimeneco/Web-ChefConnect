@@ -1,7 +1,7 @@
 import React from "react";
 import "./DropDownMenu.css";
 
-function DropdownMenu() {
+function DropDownMenu() {
     return (
         <nav className="Navbar">
             <ul className="Navbar-list">
@@ -19,4 +19,4 @@ function DropdownMenu() {
     );
 }
 
-export default DropdownMenu;
+export default DropDownMenu;
