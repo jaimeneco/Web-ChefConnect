@@ -1,0 +1,75 @@
+.Receta-info {
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background-color: #a7d2cb;
+    color: #202020;
+}
+
+.Receta-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #874c62;
+    margin-bottom: 30px;
+}
+
+.Receta-images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.Receta-images img {
+    width: 20%;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.Receta-description {
+    font-size: 1.2rem;
+    margin: 20px auto;
+    width: 60%;
+    text-align: justify;
+    color: #874c62;
+}
+
+.Receta-details {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.Receta-dificultad {
+    display: flex;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.Receta-ingredients,
+.Receta-time,
+.Receta-dificultad {
+    background-color: #f2d388;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    margin: 10px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Receta-ingredients h2,
+.Receta-time h2,
+.Receta-dificultad h2{
+    color: #874c62;
+    margin-bottom: 10px;
+}
+
+.Receta-ingredients ul {
+    padding-left: 20px;
+}
+
+.Receta-ingredients li {
+    margin-bottom: 6px;
+}

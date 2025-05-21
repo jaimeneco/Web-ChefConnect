@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import './Header.css'
+import DropdownMenu from "../dropDownMenu/DropDownMenu";
 
 export const Header = () => {
     return (
@@ -16,7 +17,7 @@ export const Header = () => {
                             <NavLink className="Header-navLink" to="/home" title='Ir a Home'>HOME</NavLink>
                         </li>
                         <li className="Header-navLink">
-                            <NavLink className="Header-navLink" to="/recetas" title='Ir a Recetas'>RECETAS</NavLink>
+                            <NavLink to="/recetas" className="Header-navLink"><DropdownMenu /></NavLink>
                         </li>
                         <li className="Header-navLink">
                             <NavLink className="Header-navLink" to="/comunidad" title='Ir a Comunidad'>COMUNIDAD</NavLink>

@@ -7,6 +7,7 @@ import { ComunidadPage } from './pages/comunidad/Comunidad.jsx'
 import { DesafiosPage } from './pages/desafios/Desafios.jsx'
 import { TycPage } from './pages/tyc/Tyc.jsx'
 import { ContactoPage } from './pages/contacto/Contacto.jsx'
+import { RecetaPage } from './pages/single-receta/SingleReceta.jsx'
 
 
 
@@ -24,6 +25,8 @@ function App() {
               <Route path='/desafios' element={<DesafiosPage />} />
               <Route path='/tyc' element={<TycPage />} />
               <Route path='/contacto' element={<ContactoPage />} />
+              <Route path='/receta' element={<RecetaPage />} />
+
             </Routes>
             </>
         </BrowserRouter>
