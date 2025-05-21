@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ajustes opcionales al resto del contenido para que no se superponga con el sidebar */
+body {
+    margin-left: 250px; 
+  } 

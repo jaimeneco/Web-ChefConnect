@@ -1,0 +1,15 @@
+.Footer{
+    background-color: #f2d388;
+    padding: 20px;
+}
+
+.Footer-content{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.Footer-logoImage{
+    width: 100px;
+}

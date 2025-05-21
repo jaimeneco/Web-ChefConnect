@@ -1,0 +1,64 @@
+/*--------------------------------
+CSS HEADER GENERAL - Estilo de sidebar
+--------------------------------*/
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    background-color: #f2d388;
+    color: pink;
+    padding-top: 20px;
+    z-index: 1000;
+}
+.Header-logoImage{
+    width: 200px;
+}
+
+/*--------------------------------
+NAVEGACIÓN
+--------------------------------*/
+.Header-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.Header-navList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Header-navLink {
+    color: #202020;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-family: "Borel", serif;
+    transition: transform 0.2s ease;
+}
+
+.Header-navLink:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #fff;
+}
+
+.Header-navLink img {
+    width: 50px;
+    
+}
