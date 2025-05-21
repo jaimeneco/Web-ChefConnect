@@ -6,5 +6,19 @@
 
 /* Ajustes opcionales al resto del contenido para que no se superponga con el sidebar */
 body {
-    margin-left: 250px; 
-  } 
+  margin-left: 250px;
+}
+
+/* Cuando la pantalla es más pequeña que 768px */
+@media (max-width: 767px) {
+  body {
+    margin-left: 0; /* Elimina el margen para pantallas pequeñas */
+  }
+}
+
+/* Cuando la pantalla es entre 768px y 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    margin-left: 0px; /* Reduce el margen en tablets */
+  }
+}

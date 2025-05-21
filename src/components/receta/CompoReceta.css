@@ -61,7 +61,7 @@
 
 .Receta-ingredients h2,
 .Receta-time h2,
-.Receta-dificultad h2{
+.Receta-dificultad h2 {
     color: #874c62;
     margin-bottom: 10px;
 }
@@ -72,4 +72,52 @@
 
 .Receta-ingredients li {
     margin-bottom: 6px;
+}
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+    .Receta-title {
+        font-size: 2.2rem;
+    }
+
+    .Receta-images img {
+        width: 40%;
+    }
+
+    .Receta-description {
+        width: 80%;
+        font-size: 1.1rem;
+    }
+
+    .Receta-ingredients,
+    .Receta-time,
+    .Receta-dificultad {
+        width: 45%;
+    }
+}
+
+/* Móviles (≤ 480px) */
+@media (max-width: 480px) {
+    .Receta-info {
+        padding: 20px;
+    }
+
+    .Receta-title {
+        font-size: 1.8rem;
+    }
+
+    .Receta-images img {
+        width: 80%;
+    }
+
+    .Receta-description {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .Receta-ingredients,
+    .Receta-time,
+    .Receta-dificultad {
+        width: 100%;
+    }
 }

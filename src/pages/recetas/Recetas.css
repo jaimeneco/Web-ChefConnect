@@ -2,12 +2,14 @@
     min-height: 100vh;
     background-color: #a7d2cb;
 }
-.Recetas-title{
+
+.Recetas-title {
     font-family: "Borel", sans-serif;
     font-size: 4rem;
-    padding: 80px 100px ;
+    padding: 80px 100px;
     color: #fff;
 }
+
 .Card-group {
     display: flex;
     flex-wrap: wrap;
@@ -62,6 +64,68 @@
     text-align: justify;
 }
 
-.Link-receta{
+.Link-receta {
     text-decoration: none;
+}
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+    .Recetas-title {
+        font-size: 3rem;
+        padding: 60px 40px;
+        text-align: center;
+    }
+
+    .Card {
+        width: 90%;
+        /* Ocupa más espacio en pantallas pequeñas */
+    }
+
+    .Card-image {
+        height: 400px;
+        /* Reduce imagen para mejor scroll */
+    }
+
+    .Card-category {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    .Card-title {
+        font-size: 1.2rem;
+    }
+
+    .Card-info {
+        font-size: 0.95rem;
+    }
+}
+
+/* Móviles (≤ 480px) */
+@media (max-width: 480px) {
+    .Recetas-title {
+        font-size: 2.2rem;
+        padding: 40px 20px;
+    }
+
+    .Card {
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    .Card-image {
+        height: 250px;
+    }
+
+    .Card-category {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .Card-title {
+        font-size: 1rem;
+    }
+
+    .Card-info {
+        font-size: 0.9rem;
+    }
 }

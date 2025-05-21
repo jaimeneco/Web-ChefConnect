@@ -22,7 +22,7 @@
     text-decoration: none;
 }
 
-.Navbar-item:hover{
+.Navbar-item:hover {
     color: #fff;
 }
 
@@ -54,4 +54,55 @@
 
 .Navbar-item:hover .Dropdown {
     display: block;
+}
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+    .Navbar-list {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .Navbar-item {
+        font-size: 1.3rem;
+    }
+
+    .Dropdown {
+        top: 35px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+/* Móviles (≤ 480px) */
+@media (max-width: 480px) {
+    .Navbar {
+        padding: 10px 5px;
+    }
+
+    .Navbar-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .Navbar-item {
+        font-size: 1.2rem;
+    }
+
+    .Dropdown {
+        position: static;
+        width: 100%;
+        margin-top: 5px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .Dropdown-item {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
 }

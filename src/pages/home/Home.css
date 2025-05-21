@@ -5,17 +5,23 @@
     min-height: 100vh;
 
     display: flex;
-    align-items: center;      /* Centrado vertical */
-    justify-content: flex-end; /* Empuja a la derecha */
-    padding-right: 10%;        /* Separación del borde derecho */
+    align-items: center;
+    /* Centrado vertical */
+    justify-content: flex-end;
+    /* Empuja a la derecha */
+    padding-right: 10%;
+    /* Separación del borde derecho */
 }
 
 .Home-text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;   /* Alineación interna hacia la izquierda dentro del bloque */
-    justify-content: center;   /* Centrado vertical del contenido dentro del bloque */
-    width: 50%;                /* Ajusta el tamaño del bloque si quieres más o menos espacio */
+    align-items: flex-start;
+    /* Alineación interna hacia la izquierda dentro del bloque */
+    justify-content: center;
+    /* Centrado vertical del contenido dentro del bloque */
+    width: 50%;
+    /* Ajusta el tamaño del bloque si quieres más o menos espacio */
 }
 
 .Home-title {
@@ -34,10 +40,10 @@
     color: #202020;
 }
 
-.Home-btn{
+.Home-btn {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
-    padding: 30px ;
+    padding: 30px;
     margin: 20px 0px;
     text-decoration: none;
     color: #fff;
@@ -45,11 +51,68 @@
     border: none;
     border-radius: 20px;
 
-    
+
 }
 
-.Home-btn:hover{
+.Home-btn:hover {
     transform: scale(1.05);
     color: #f2d388;
-    
+
+}
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+    .Main-home {
+        justify-content: center;
+        /* Centrar contenido horizontalmente */
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .Home-text {
+        width: 80%;
+        align-items: center;
+        /* Centrar contenido */
+    }
+
+    .Home-title {
+        font-size: 2.5rem;
+    }
+
+    .Home-info {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .Home-btn {
+        font-size: 1.2rem;
+        padding: 20px;
+    }
+}
+
+/* Móviles (≤ 480px) */
+@media (max-width: 480px) {
+    .Main-home {
+        padding: 20px;
+        background-position: top;
+        /* Enfoca el centro superior */
+    }
+
+    .Home-text {
+        width: 100%;
+        align-items: center;
+    }
+
+    .Home-title {
+        font-size: 2rem;
+    }
+
+    .Home-info {
+        font-size: 1rem;
+    }
+
+    .Home-btn {
+        font-size: 1rem;
+        padding: 15px;
+    }
 }
