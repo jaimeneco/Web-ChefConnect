@@ -8,7 +8,7 @@ export const RecetasPage = () => {
         <>
             <Header />
             <main className="Main-recetas">
-                <p className="Recetas-title">Descubre nuestras recetas:</p>
+                <p className="Recetas-title">Descubre nuestras recetas :</p>
                 <div className="Card-group">
                     <NavLink to="/receta" className="Link-receta">
                         <div className="Card">

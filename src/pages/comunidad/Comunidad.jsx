@@ -7,6 +7,7 @@ export const ComunidadPage = () => {
         <>
             <Header />
             <main className="Main-comunidad">
+                <p className="Recetas-title">Nuestra comunidad :</p>
                 <section className="Profile-cardsContainer">
                     <div className="Profile-card">
                         <img src="/imgs/img-perfiles/img1.png" alt="Perfil 1" className="Profile-image" />
