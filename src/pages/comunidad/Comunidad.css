@@ -1,0 +1,57 @@
+.Main-comunidad {
+    min-height: 100vh;
+    background-color: #874c62 ;
+}
+
+.Profile-cardsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.Profile-card {
+    background-color: #f2d388;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 500px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #874c62;
+    transition: transform 0.3s ease;
+}
+
+.Profile-card:hover {
+    transform: scale(1.02);
+    background-color: #a7d2cb;
+}
+
+.Profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #874c62;
+}
+
+.Profile-button {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background-color: #874c62;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Profile-button:hover {
+    background-color: #5e2f41;
+}
