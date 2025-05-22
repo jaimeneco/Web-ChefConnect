@@ -15,7 +15,7 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
-    padding-top: 10px;
+    padding: 10px;
     font-family: Arial, sans-serif;
     align-items: center;
     align-content: center;
@@ -103,13 +103,12 @@
 /* Móviles (≤ 480px) */
 @media (max-width: 480px) {
     .Recetas-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         padding: 40px 20px;
     }
 
     .Card {
         width: 100%;
-        margin: 0 10px;
     }
 
     .Card-image {

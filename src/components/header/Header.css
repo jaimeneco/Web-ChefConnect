@@ -13,7 +13,6 @@ CSS HEADER GENERAL - Estilo de sidebar
     justify-content: center;
     align-items: center;
     background-color: #f2d388;
-    color: pink;
     padding-top: 20px;
     z-index: 1000;
 }
@@ -68,15 +67,16 @@ NAVEGACIÓN
 /* Tablets y móviles (≤ 768px) */
 @media (max-width: 768px) {
     .Header {
-        position: fixed;
+        position: relative;
         top: 0;
         left: 0;
         width: 100%;
         height: auto;
+        display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
+        padding: 10px;
     }
 
     .Header-logoImage {
@@ -85,18 +85,18 @@ NAVEGACIÓN
     }
 
     .Header-nav {
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
         padding-top: 0;
     }
 
     .Header-navList {
-        flex-direction: row;
-        gap: 15px;
+        display: flex;
+        flex-direction: column;
     }
 
     .Header-navLink {
         font-size: 1rem;
-        padding: 5px 10px;
     }
 
     .Header-navLink img {

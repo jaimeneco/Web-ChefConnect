@@ -64,7 +64,6 @@
 @media (max-width: 768px) {
     .Main-home {
         justify-content: center;
-        /* Centrar contenido horizontalmente */
         padding-right: 0;
         text-align: center;
     }
@@ -72,7 +71,6 @@
     .Home-text {
         width: 80%;
         align-items: center;
-        /* Centrar contenido */
     }
 
     .Home-title {
