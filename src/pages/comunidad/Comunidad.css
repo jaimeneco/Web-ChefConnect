@@ -1,100 +1,162 @@
 .Main-comunidad {
     min-height: 100vh;
-    background-color: #874c62;
+    background-color: #FFF8F6;
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+.Comunidad-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    padding: 60px 80px 20px 80px;
+    color: #1A1A1A;
+}
+
+.Comunidad-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(to right, #C0392B, #E8521A);
+    margin-top: 12px;
+    border-radius: 2px;
 }
 
 .Profile-cardsContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    align-content: center;
+    align-items: stretch;
     justify-content: center;
-    gap: 2rem;
-    padding: 2rem;
+    gap: 24px;
+    padding: 20px 60px 40px 60px;
     flex-wrap: wrap;
 }
 
 .Profile-card {
-    background-color: #f2d388;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    padding: 40px;
-    width: 500px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    padding: 32px 24px;
+    width: 240px;
     text-align: center;
-    font-family: Arial, sans-serif;
-    color: #874c62;
-    transition: transform 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+    color: #1A1A1A;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0e8e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
 
 .Profile-card:hover {
-    transform: scale(1.02);
-    background-color: #a7d2cb;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(192, 57, 43, 0.13);
 }
 
 .Profile-image {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
-    border: 3px solid #874c62;
+    margin-bottom: 8px;
+    border: 3px solid #C0392B;
+    transition: transform 0.3s ease;
+}
+
+.Profile-card:hover .Profile-image {
+    transform: scale(1.06);
+}
+
+.Profile-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #1A1A1A;
+    margin-bottom: 4px;
+}
+
+.Profile-card p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    color: #6B6B6B;
+    line-height: 1.5;
+}
+
+/* Badge de "Amigos" */
+.Profile-card p:has(🫂) {
+    background-color: #FDECEA;
+    color: #C0392B;
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
 }
 
 .Profile-button {
-    margin-top: 1rem;
-    padding: 10px 20px;
-    background-color: #874c62;
+    margin-top: auto; /* Empuja el botón siempre al fondo */
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #C0392B, #E8521A);
     color: #fff;
     border: none;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.3px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.25);
+    width: 100%;
 }
 
 .Profile-button:hover {
-    background-color: #5e2f41;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(192, 57, 43, 0.38);
+    background: linear-gradient(135deg, #a93226, #d44a16);
 }
 
 /* Tablets (≤768px) */
 @media (max-width: 768px) {
+    .Comunidad-title {
+        font-size: 2.2rem;
+        padding: 50px 30px 16px 30px;
+    }
+
     .Profile-cardsContainer {
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 1.5rem;
+        padding: 20px 20px 40px 20px;
+        gap: 18px;
     }
 
     .Profile-card {
-        width: 80%;
-        padding: 30px;
-    }
-
-    .Profile-image {
-        width: 90px;
-        height: 90px;
-    }
-
-    .Profile-button {
-        padding: 8px 18px;
-        font-size: 1rem;
+        width: 42%;
     }
 }
 
 /* Móviles (≤480px) */
 @media (max-width: 480px) {
+    .Comunidad-title {
+        font-size: 1.8rem;
+        padding: 40px 20px 12px 20px;
+    }
+
+    .Profile-cardsContainer {
+        padding: 16px 16px 32px 16px;
+    }
+
     .Profile-card {
-        width: 95%;
-        padding: 20px;
+        width: 100%;
+        padding: 24px 20px;
     }
 
     .Profile-image {
-        width: 70px;
-        height: 70px;
+        width: 75px;
+        height: 75px;
     }
 
     .Profile-button {
-        width: 100%;
-        padding: 10px;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 }

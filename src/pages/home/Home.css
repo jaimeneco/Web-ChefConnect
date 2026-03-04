@@ -1,99 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;500;600&display=swap');
+
 .Main-home {
     background-image: url(/imgs/banner1.jpg);
     background-size: cover;
     background-position: center;
     min-height: 100vh;
-
     display: flex;
     align-items: center;
-    /* Centrado vertical */
     justify-content: flex-end;
-    /* Empuja a la derecha */
     padding-right: 10%;
-    /* Separación del borde derecho */
+    padding-top: 70px; /* compensa el header fixed */
+    position: relative;
+}
+.Main-home::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to left,
+        rgba(255, 248, 246, 0.88) 40%,
+        rgba(255, 248, 246, 0.15) 100%
+    );
+    z-index: 0;
 }
 
 .Home-text {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* Alineación interna hacia la izquierda dentro del bloque */
     justify-content: center;
-    /* Centrado vertical del contenido dentro del bloque */
-    width: 50%;
-    /* Ajusta el tamaño del bloque si quieres más o menos espacio */
+    width: 48%;
+    gap: 22px;
 }
 
 .Home-title {
+    font-family: 'Poppins', sans-serif;
     font-size: 4rem;
-    font-family: "Borel", sans-serif;
-    color: #202020;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+/* Acento de color en parte del título — opcional pero elegante */
+.Home-title span {
+    color: #C0392B;
 }
 
 .Home-info {
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
-    font-size: 1.5rem;
-    color: #202020;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.8;
+    text-align: left;
+    max-width: 520px;
 }
 
 .Home-btn {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    padding: 30px;
-    margin: 20px 0px;
-    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 16px 38px;
     color: #fff;
-    background-color: #202020;
+    background: linear-gradient(135deg, #C0392B, #E8521A);
     border: none;
-    border-radius: 20px;
-
-
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 18px rgba(192, 57, 43, 0.35);
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .Home-btn:hover {
-    transform: scale(1.05);
-    color: #f2d388;
-
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(192, 57, 43, 0.45);
+    background: linear-gradient(135deg, #a93226, #d44a16);
+    color: #fff;
 }
 
-/* Tablets (≤ 768px) */
+/* Tablets */
 @media (max-width: 768px) {
     .Main-home {
         justify-content: center;
         padding-right: 0;
-        text-align: center;
+    }
+
+    .Main-home::before {
+        background: rgba(255, 248, 246, 0.85);
     }
 
     .Home-text {
         width: 80%;
         align-items: center;
-    }
-
-    .Home-title {
-        font-size: 2.5rem;
-    }
-
-    .Home-info {
-        font-size: 1.2rem;
         text-align: center;
     }
 
-    .Home-btn {
-        font-size: 1.2rem;
-        padding: 20px;
+    .Home-title {
+        font-size: 2.8rem;
+    }
+
+    .Home-info {
+        font-size: 1rem;
+        text-align: center;
     }
 }
 
-/* Móviles (≤ 480px) */
+/* Móviles */
 @media (max-width: 480px) {
     .Main-home {
         padding: 20px;
         background-position: top;
-        /* Enfoca el centro superior */
     }
 
     .Home-text {
@@ -102,15 +123,15 @@
     }
 
     .Home-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .Home-info {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .Home-btn {
-        font-size: 1rem;
-        padding: 15px;
+        font-size: 0.95rem;
+        padding: 14px 30px;
     }
 }

@@ -1,67 +1,95 @@
 .Main-recetas {
     min-height: 100vh;
-    background-color: #a7d2cb;
+    background-color: #FFF8F6;
+    padding-top: 70px; /* Compensa el header fixed */
+    padding-bottom: 60px;
 }
 
 .Recetas-title {
-    font-family: "Borel", sans-serif;
-    font-size: 4rem;
-    padding: 80px 100px;
-    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    padding: 60px 80px 20px 80px;
+    color: #1A1A1A;
+}
+
+/* Línea decorativa roja bajo el título */
+.Recetas-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(to right, #C0392B, #E8521A);
+    margin-top: 12px;
+    border-radius: 2px;
 }
 
 .Card-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 28px;
     justify-content: center;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    align-items: center;
-    align-content: center;
+    padding: 20px 60px 40px 60px;
+    align-items: stretch; /* Todas las cards misma altura */
 }
 
 .Card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    width: 400px;
-    transition: transform 0.3s ease;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0e8e6;
 }
 
 .Card:hover {
-    transform: scale(1.05);
+    transform: translateY(-6px); /* Lift en lugar de scale */
+    box-shadow: 0 12px 32px rgba(192, 57, 43, 0.15);
 }
 
 .Card-category {
-    background-color: #874c62;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
+    background: linear-gradient(135deg, #C0392B, #E8521A);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     color: #fff;
-    padding: 20px;
-    font-size: 1.5rem;
+    padding: 10px 16px;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     text-align: center;
 }
 
 .Card-image {
     width: 100%;
-    height: 600px;
+    height: 220px; /* Reducido — 600px era demasiado */
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.Card:hover .Card-image {
+    transform: scale(1.04); /* Zoom sutil en la imagen al hover */
 }
 
 .Card-title {
-    color: #874c62;
-    font-size: 1.4rem;
-    margin: 10px;
-    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #1A1A1A;
+    font-size: 1.15rem;
+    margin: 14px 16px 8px 16px;
+    text-align: left;
 }
 
 .Card-info {
-    color: #202020;
-    padding: 0 15px 15px 15px;
-    font-size: 1rem;
-    text-align: justify;
+    font-family: 'Nunito', sans-serif;
+    color: #6B6B6B;
+    padding: 0 16px 20px 16px;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    text-align: left;
+    flex-grow: 1; /* Empuja el contenido a ocupar el espacio restante */
 }
 
 .Link-receta {
@@ -71,40 +99,33 @@
 /* Tablets (≤ 768px) */
 @media (max-width: 768px) {
     .Recetas-title {
-        font-size: 3rem;
-        padding: 60px 40px;
-        text-align: center;
+        font-size: 2.2rem;
+        padding: 50px 30px 16px 30px;
+    }
+
+    .Card-group {
+        padding: 20px 20px 40px 20px;
+        gap: 20px;
     }
 
     .Card {
-        width: 90%;
-        /* Ocupa más espacio en pantallas pequeñas */
+        width: 85%;
     }
 
     .Card-image {
-        height: 400px;
-        /* Reduce imagen para mejor scroll */
-    }
-
-    .Card-category {
-        font-size: 1.2rem;
-        padding: 15px;
-    }
-
-    .Card-title {
-        font-size: 1.2rem;
-    }
-
-    .Card-info {
-        font-size: 0.95rem;
+        height: 200px;
     }
 }
 
 /* Móviles (≤ 480px) */
 @media (max-width: 480px) {
     .Recetas-title {
-        font-size: 2rem;
-        padding: 40px 20px;
+        font-size: 1.8rem;
+        padding: 40px 20px 12px 20px;
+    }
+
+    .Card-group {
+        padding: 16px 16px 32px 16px;
     }
 
     .Card {
@@ -112,12 +133,7 @@
     }
 
     .Card-image {
-        height: 250px;
-    }
-
-    .Card-category {
-        font-size: 1rem;
-        padding: 12px;
+        height: 180px;
     }
 
     .Card-title {
@@ -125,6 +141,6 @@
     }
 
     .Card-info {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
 }

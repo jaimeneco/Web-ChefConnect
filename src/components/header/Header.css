@@ -1,105 +1,196 @@
-/*--------------------------------
-CSS HEADER GENERAL - Estilo de sidebar
---------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;500;600&display=swap');
 
 .Header {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 250px;
+    width: 100%;
+    height: 70px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: #f2d388;
-    padding-top: 20px;
+    background-color: rgba(26, 26, 26, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 2px solid #C0392B;
     z-index: 1000;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.Header-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .Header-logoImage {
-    width: 200px;
-    margin-bottom: 30px;
+    width: 150px;
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/*--------------------------------
-NAVEGACIÓN
---------------------------------*/
-.Header-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    width: 100%;
-    padding-top: 40px;
+.Header-logoImage:hover {
+    opacity: 0.85;
+    transform: scale(1.04);
 }
 
 .Header-navList {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    align-content: center;
+    gap: 32px;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .Header-navLink {
-    color: #202020;
+    color: #dddddd;
     text-decoration: none;
-    padding: 0px 0px;
-    font-size: 1.5rem;
-    font-family: "Borel", serif;
-    transition: transform 0.2s ease;
+    font-size: 0.85rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+/* Línea animada bajo cada link */
+.Header-navLink::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #C0392B;
+    transition: width 0.25s ease;
 }
 
 .Header-navLink:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-    color: #fff;
+    color: #ffffff;
+    transform: none;
 }
 
+.Header-navLink:hover::after {
+    width: 100%;
+}
+
+/* Link activo */
+.Header-navLink.active {
+    color: #E8521A;
+}
+
+.Header-navLink.active::after {
+    width: 100%;
+    background-color: #E8521A;
+}
+
+/* Iconos de redes sociales */
 .Header-navLink img {
-    width: 50px;
-
+    width: 22px;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    filter: brightness(0) invert(1);
 }
 
-/* Tablets y móviles (≤ 768px) */
+.Header-navLink img:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* Separador visual antes de los iconos sociales */
+.Header-navList li:nth-last-child(2) {
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid #444444;
+}
+
+/*--------------------------------
+HAMBURGER MENU — Móvil
+--------------------------------*/
+.Header-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+}
+
+.Header-hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Tablets (≤ 768px) */
 @media (max-width: 768px) {
     .Header {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
+        padding: 0 20px;
+        height: 60px;
     }
 
-    .Header-logoImage {
-        width: 150px;
-        margin-bottom: 0;
-    }
-
-    .Header-nav {
+    .Header-hamburger {
         display: flex;
-        flex-direction: column;
-        padding-top: 0;
     }
 
     .Header-navList {
-        display: flex;
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
         flex-direction: column;
+        background-color: rgba(26, 26, 26, 0.98);
+        padding: 20px 0;
+        gap: 0;
+        border-bottom: 2px solid #C0392B;
+    }
+
+    .Header-navList.open {
+        display: flex;
+    }
+
+    .Header-navList li {
+        width: 100%;
+        text-align: center;
+        padding: 14px 0;
+        border-bottom: 1px solid #2a2a2a;
     }
 
     .Header-navLink {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .Header-logoImage {
+        width: 100px;
     }
 
     .Header-navLink img {
-        width: 30px;
+        width: 20px;
+    }
+
+    .Header-navList li:nth-last-child(2) {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+    }
+}
+
+/* Móviles (≤ 480px) */
+@media (max-width: 480px) {
+    .Header {
+        padding: 0 16px;
+    }
+
+    .Header-logoImage {
+        width: 90px;
     }
 }

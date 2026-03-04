@@ -1,6 +1,7 @@
 .Footer {
-    background-color: #f2d388;
-    padding: 20px;
+    background-color: #1A1A1A;
+    padding: 32px 20px;
+    border-top: 3px solid #C0392B;
 }
 
 .Footer-content {
@@ -8,42 +9,56 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    gap: 12px;
+    font-family: 'Nunito', sans-serif;
 }
 
 .Footer-logoImage {
-    width: 120px;
-    margin: 10px;
+    width: 110px;
+    opacity: 0.92;
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Tablets (≤ 768px) */
+.Footer-logoImage:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.Footer-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #aaaaaa;
+    letter-spacing: 0.4px;
+    text-align: center;
+}
+
+/* Tablets */
 @media (max-width: 768px) {
     .Footer {
-        padding: 15px;
+        padding: 24px 15px;
     }
 
     .Footer-logoImage {
-        width: 100px;
-        margin: 8px;
+        width: 95px;
     }
 
-    .Footer-content {
-        text-align: center;
+    .Footer-text {
+        font-size: 0.8rem;
     }
 }
 
-/* Móviles (≤ 480px) */
+/* Móviles */
 @media (max-width: 480px) {
     .Footer {
-        padding: 10px;
+        padding: 20px 10px;
     }
 
     .Footer-logoImage {
         width: 80px;
-        margin: 5px;
     }
 
-    .Footer-content {
-        font-size: 0.9rem;
+    .Footer-text {
+        font-size: 0.75rem;
     }
 }
