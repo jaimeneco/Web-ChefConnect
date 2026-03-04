@@ -5,6 +5,7 @@ import  { HomePage } from './pages/home/Home.jsx'
 import { RecetasPage } from './pages/recetas/Recetas.jsx'
 import { ComunidadPage } from './pages/comunidad/Comunidad.jsx'
 import { RecetaPage } from './pages/single-receta/SingleReceta.jsx'
+import { PerfilPage } from './pages/perfil/Perfil.jsx'
 
 
 
@@ -20,6 +21,8 @@ function App() {
               <Route path='/recetas' element={<RecetasPage />} />
               <Route path='/comunidad' element={<ComunidadPage />} />
               <Route path='/receta' element={<RecetaPage />} />
+              <Route path='/perfil' element={<PerfilPage />} />
+
 
             </Routes>
             </>

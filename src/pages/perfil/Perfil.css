@@ -1,0 +1,365 @@
+.Main-perfil {
+    min-height: 100vh;
+    background-color: #FFF8F6;
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+/* ── HERO ── */
+.Perfil-hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 80px 40px 80px;
+    background: #ffffff;
+    border-bottom: 1px solid #f0e8e6;
+}
+
+.Perfil-avatarWrapper {
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #C0392B;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(192, 57, 43, 0.2);
+}
+
+.Perfil-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.Perfil-avatarWrapper:hover .Perfil-avatar {
+    transform: scale(1.06);
+}
+
+.Perfil-heroInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Perfil-nombre {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.1;
+}
+
+.Perfil-alias {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: #C0392B;
+    font-weight: 600;
+}
+
+.Perfil-bio {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.98rem;
+    color: #555555;
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+.Perfil-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    color: #6B6B6B;
+}
+
+.Perfil-btn {
+    align-self: flex-start;
+    margin-top: 6px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #C0392B, #E8521A);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(192, 57, 43, 0.3);
+}
+
+.Perfil-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(192, 57, 43, 0.4);
+    background: linear-gradient(135deg, #a93226, #d44a16);
+}
+
+/* ── STATS ── */
+.Perfil-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    background: #ffffff;
+    border-bottom: 1px solid #f0e8e6;
+}
+
+.Perfil-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 60px;
+    border-right: 1px solid #f0e8e6;
+    transition: background 0.2s ease;
+}
+
+.Perfil-stat:last-child {
+    border-right: none;
+}
+
+.Perfil-stat:hover {
+    background-color: #FFF0EE;
+}
+
+.Perfil-statNumber {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #C0392B;
+}
+
+.Perfil-statLabel {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    color: #6B6B6B;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* ── GRID DE SECCIONES ── */
+.Perfil-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 40px 80px;
+}
+
+.Perfil-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0e8e6;
+    border-top: 3px solid #C0392B;
+}
+
+.Perfil-sectionTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #C0392B;
+    margin-bottom: 20px;
+}
+
+/* ── INSIGNIAS ── */
+.Perfil-insignias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.Perfil-insignia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: #FFF8F6;
+    border: 1px solid #f0e8e6;
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.Perfil-insignia:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(192, 57, 43, 0.12);
+}
+
+.Perfil-insigniaEmoji {
+    font-size: 1.8rem;
+}
+
+.Perfil-insigniaLabel {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #6B6B6B;
+    text-align: center;
+}
+
+/* ── ACTIVIDAD ── */
+.Perfil-actividad {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.Perfil-actividadItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.Perfil-actividadDot {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #C0392B, #E8521A);
+    margin-top: 5px;
+}
+
+.Perfil-actividadTexto {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.Perfil-actividadTiempo {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    color: #aaaaaa;
+    margin-top: 2px;
+}
+
+/* ── RECETAS ── */
+.Perfil-recetas {
+    padding: 0 80px 40px 80px;
+}
+
+.Perfil-recetasGrid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.Perfil-recetaCard {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    width: 260px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+    border: 1px solid #f0e8e6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Perfil-recetaCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(192, 57, 43, 0.13);
+}
+
+.Perfil-recetaImg {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.Perfil-recetaCard:hover .Perfil-recetaImg {
+    transform: scale(1.04);
+}
+
+.Perfil-recetaInfo {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.Perfil-recetaCategoria {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #C0392B;
+}
+
+.Perfil-recetaTitulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .Perfil-hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 50px 30px 30px 30px;
+    }
+
+    .Perfil-btn {
+        align-self: center;
+    }
+
+    .Perfil-meta {
+        justify-content: center;
+    }
+
+    .Perfil-stat {
+        padding: 20px 30px;
+    }
+
+    .Perfil-grid {
+        grid-template-columns: 1fr;
+        padding: 24px 24px;
+    }
+
+    .Perfil-recetas {
+        padding: 0 24px 40px 24px;
+    }
+
+    .Perfil-recetaCard {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Perfil-hero {
+        padding: 40px 16px 24px 16px;
+    }
+
+    .Perfil-nombre {
+        font-size: 1.6rem;
+    }
+
+    .Perfil-stat {
+        padding: 16px 20px;
+    }
+
+    .Perfil-statNumber {
+        font-size: 1.6rem;
+    }
+
+    .Perfil-grid {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .Perfil-recetas {
+        padding: 0 16px 32px 16px;
+    }
+}
