@@ -3,7 +3,7 @@ import { useState } from "react";
 import './Header.css'
 import DropDownMenu from "../dropDownMenu/DropDownMenu";
 
-export const Header = () => {
+export const Header = ({ onFilter = () => {} }) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
@@ -25,7 +25,7 @@ export const Header = () => {
                         <NavLink className="Header-navLink" to="/home" title='Ir a Home' onClick={() => setMenuOpen(false)}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/recetas" className="Header-navLink" onClick={() => setMenuOpen(false)}><DropDownMenu /></NavLink>
+                        <DropDownMenu onFilter={onFilter || (() => { })} />
                     </li>
                     <li>
                         <NavLink className="Header-navLink" to="/comunidad" title='Ir a Comunidad' onClick={() => setMenuOpen(false)}>Comunidad</NavLink>
