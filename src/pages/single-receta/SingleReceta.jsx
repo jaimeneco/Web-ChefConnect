@@ -1,32 +1,63 @@
+import { useParams } from "react-router-dom";
 import { Header } from '../../components/header/Header';
 import { Footer } from '../../components/footer/Footer';
+import { RECETAS } from "../../data/recetas.data";
 import './SingleReceta.css'
-import { CompoReceta } from "../../components/receta/CompoReceta";
-
 
 export const RecetaPage = () => {
+    const { slug } = useParams();
+    const receta = RECETAS.find(r => r.slug === slug);
+
+    // Si no encuentra la receta
+    if (!receta) {
+        return (
+            <>
+                <Header />
+                <main className="Receta-info Receta-notFound">
+                    <h1>Receta no encontrada 😔</h1>
+                    <p>La receta que buscas no existe o ha sido eliminada.</p>
+                </main>
+                <Footer />
+            </>
+        );
+    }
+
     return (
         <>
-        <Header />
-        <CompoReceta
-            title="Arroz al curry"
-            images={["/imgs/arroz-curry.jpg", "/imgs/arroz-curry2.png", "/imgs/arroz-curry3.png"]}
-            description="El arroz al curry es una receta clásica de la cocina asiática que ha conquistado paladares en todo el mundo gracias a su combinación única de aromas, texturas y sabores intensos. Este plato, de origen indio pero con múltiples versiones en países como Tailandia, Japón o Sri Lanka, se caracteriza por su base de arroz cocido acompañado de una mezcla de especias donde el protagonista es el curry. 
-            El curry, una mezcla de especias como cúrcuma, comino, cilantro, jengibre y pimienta, aporta un sabor profundo, ligeramente picante y muy fragante que transforma un arroz sencillo en una experiencia culinaria rica y reconfortante. Dependiendo de la región y los ingredientes disponibles, el arroz al curry puede incluir también verduras salteadas, trozos de pollo, mariscos o tofu, lo que lo convierte en un plato muy versátil y adaptable a todo tipo de dietas.
-            En esta versión sencilla y deliciosa, te enseñamos cómo preparar un arroz al curry básico, ideal como plato principal o como acompañamiento. Perfecto para una comida rápida entre semana o para sorprender a tus invitados con un toque exótico y lleno de color."
-            ingredients={[
-                "1 taza de arroz",
-                "2 tazas de agua",
-                "1 cucharada de curry en polvo",
-                "1 diente de ajo",
-                "1/2 cebolla",
-                "Sal y pimienta al gusto",
-                "Aceite de oliva"
-            ]}
-            dificultad= "Principiante"
-            time="15 minutos de preparación + 20 minutos de cocción"
-        />
-        <Footer />
+            <Header />
+            <main className="Receta-info">
+                <h1 className="Receta-title">{receta.titulo}</h1>
+
+                <div className="Receta-images">
+                    {receta.images.map((img, index) => (
+                        <img key={index} src={img} alt={`${receta.titulo} ${index + 1}`} />
+                    ))}
+                </div>
+
+                <p className="Receta-description">{receta.description}</p>
+
+                <div className="Receta-details">
+                    <div className="Receta-ingredients">
+                        <h2>Ingredientes</h2>
+                        <ul>
+                            {receta.ingredients.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className="Receta-dificultad">
+                        <h2>Dificultad del plato</h2>
+                        <p>{receta.dificultad}</p>
+                    </div>
+
+                    <div className="Receta-time">
+                        <h2>Tiempo de preparación</h2>
+                        <p>{receta.time}</p>
+                    </div>
+                </div>
+            </main>
+            <Footer />
         </>
     );
 };

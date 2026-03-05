@@ -1,25 +1,34 @@
 import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./DropDownMenu.css";
 
-function DropDownMenu({ onFilter }) {
+function DropDownMenu({ onFilter = () => {} }) {
     const [open, setOpen] = useState(false);
     const timeoutRef = useRef(null);
+    const navigate = useNavigate();
 
     const categorias = ["Todas", "Sabores del mundo", "Carnes", "Pescados", "Veggie"];
 
     const handleMouseEnter = () => {
-        clearTimeout(timeoutRef.current); // Cancela cualquier cierre pendiente
+        clearTimeout(timeoutRef.current);
         setOpen(true);
     };
 
     const handleMouseLeave = () => {
-        // Pequeño delay antes de cerrar — da tiempo a mover el ratón al dropdown
         timeoutRef.current = setTimeout(() => setOpen(false), 150);
     };
 
     const handleSelect = (categoria) => {
-        onFilter(categoria);
         setOpen(false);
+        if (categoria === "Todas") {
+            // Navega a recetas y resetea el filtro
+            onFilter("Todas");
+            navigate("/recetas");
+        } else {
+            // Navega a recetas con la categoría como parámetro
+            onFilter(categoria);
+            navigate(`/recetas?categoria=${encodeURIComponent(categoria)}`);
+        }
     };
 
     return (

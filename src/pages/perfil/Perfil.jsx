@@ -1,44 +1,39 @@
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { Header } from "../../components/header/Header";
 import { Footer } from "../../components/footer/Footer";
+import { USUARIOS } from "../../data/usuarios.data";
+import { RECETAS } from "../../data/recetas.data";
+import { NavLink } from "react-router-dom";
 import './Perfil.css'
 
-const usuario = {
-    nombre: "Lucía Gómez",
-    alias: "@lucia.cocina",
-    avatar: "/imgs/img-perfiles/img1.png",
-    ubicacion: "Madrid, España",
-    miembro: "Marzo 2023",
-    bio: "Apasionada de la cocina italiana y mediterránea. Me encanta experimentar con especias y compartir mis descubrimientos con la comunidad. 🍝",
-    estiloFavorito: "Cocina Italiana",
-    desafiosConseguidos: 12,
-    recetasPublicadas: 8,
-    amigos: 34,
-    insignias: [
-        { emoji: "🏆", label: "Top Chef" },
-        { emoji: "🔥", label: "Racha 7 días" },
-        { emoji: "🌍", label: "Sabores del mundo" },
-        { emoji: "⭐", label: "Receta destacada" },
-    ],
-    recientes: [
-        { titulo: "Pasta alla Norma", categoria: "Sabores del mundo", imagen: "/imgs/arroz-curry.jpg" },
-        { titulo: "Gyozas de cerdo", categoria: "Carnes", imagen: "/imgs/gyozas-carne.jpg" },
-        { titulo: "Salmón con espinacas", categoria: "Pescados", imagen: "/imgs/salmon.png" },
-    ],
-    actividad: [
-        { texto: "Publicó una nueva receta: Pasta alla Norma", tiempo: "Hace 2 días" },
-        { texto: "Completó el desafío semanal: Cocina sin gluten", tiempo: "Hace 5 días" },
-        { texto: "Se hizo amiga de Rémy Gallard", tiempo: "Hace 1 semana" },
-        { texto: "Consiguió la insignia ⭐ Receta destacada", tiempo: "Hace 2 semanas" },
-    ]
-};
-
 export const PerfilPage = () => {
+    const { slug } = useParams();
+    const usuario = USUARIOS.find(u => u.slug === slug);
+    const [solicitudEnviada, setSolicitudEnviada] = useState(false);
+
+    const recetasDelUsuario = usuario
+        ? RECETAS.filter(r => usuario.recientes.some(rec => rec.titulo === r.titulo))
+        : [];
+
+    if (!usuario) {
+        return (
+            <>
+                <Header />
+                <main className="Main-perfil Perfil-notFound">
+                    <h1>Usuario no encontrado 😔</h1>
+                    <p>Este perfil no existe o ha sido eliminado.</p>
+                </main>
+                <Footer />
+            </>
+        );
+    }
+
     return (
         <>
             <Header />
             <main className="Main-perfil">
 
-                {/* HERO DEL PERFIL */}
                 <section className="Perfil-hero">
                     <div className="Perfil-avatarWrapper">
                         <img src={usuario.avatar} alt={usuario.nombre} className="Perfil-avatar" />
@@ -52,11 +47,19 @@ export const PerfilPage = () => {
                             <span>📅 Miembro desde {usuario.miembro}</span>
                             <span>🍽️ {usuario.estiloFavorito}</span>
                         </div>
-                        <button className="Perfil-btn">+ Solicitar amistad</button>
+                        {usuario.esamigo
+                            ? <button className="Perfil-btn Perfil-btn--amigo">✓ Sois amigos</button>
+                            : <button
+                                className={`Perfil-btn ${solicitudEnviada ? 'Perfil-btn--enviada' : ''}`}
+                                onClick={() => setSolicitudEnviada(true)}
+                                disabled={solicitudEnviada}
+                              >
+                                {solicitudEnviada ? '✓ Solicitud enviada' : '+ Solicitar amistad'}
+                              </button>
+                        }
                     </div>
                 </section>
 
-                {/* ESTADÍSTICAS */}
                 <section className="Perfil-stats">
                     <div className="Perfil-stat">
                         <span className="Perfil-statNumber">{usuario.desafiosConseguidos}</span>
@@ -73,8 +76,6 @@ export const PerfilPage = () => {
                 </section>
 
                 <div className="Perfil-grid">
-
-                    {/* INSIGNIAS */}
                     <section className="Perfil-section">
                         <h2 className="Perfil-sectionTitle">Insignias conseguidas</h2>
                         <div className="Perfil-insignias">
@@ -87,7 +88,6 @@ export const PerfilPage = () => {
                         </div>
                     </section>
 
-                    {/* ACTIVIDAD RECIENTE */}
                     <section className="Perfil-section">
                         <h2 className="Perfil-sectionTitle">Actividad reciente</h2>
                         <ul className="Perfil-actividad">
@@ -102,22 +102,25 @@ export const PerfilPage = () => {
                             ))}
                         </ul>
                     </section>
-
                 </div>
 
-                {/* RECETAS PUBLICADAS */}
                 <section className="Perfil-recetas">
                     <h2 className="Perfil-sectionTitle">Recetas publicadas</h2>
                     <div className="Perfil-recetasGrid">
-                        {usuario.recientes.map((receta, i) => (
-                            <div key={i} className="Perfil-recetaCard">
-                                <img src={receta.imagen} alt={receta.titulo} className="Perfil-recetaImg" />
-                                <div className="Perfil-recetaInfo">
-                                    <span className="Perfil-recetaCategoria">{receta.categoria}</span>
-                                    <h3 className="Perfil-recetaTitulo">{receta.titulo}</h3>
-                                </div>
-                            </div>
-                        ))}
+                        {recetasDelUsuario.length > 0
+                            ? recetasDelUsuario.map((receta) => (
+                                <NavLink to={`/receta/${receta.slug}`} key={receta.id} style={{ textDecoration: 'none' }}>
+                                    <div className="Perfil-recetaCard">
+                                        <img src={receta.imagen} alt={receta.titulo} className="Perfil-recetaImg" />
+                                        <div className="Perfil-recetaInfo">
+                                            <span className="Perfil-recetaCategoria">{receta.categoria}</span>
+                                            <h3 className="Perfil-recetaTitulo">{receta.titulo}</h3>
+                                        </div>
+                                    </div>
+                                </NavLink>
+                            ))
+                            : <p className="Perfil-sinRecetas">Este usuario aún no tiene recetas publicadas en la web.</p>
+                        }
                     </div>
                 </section>
 

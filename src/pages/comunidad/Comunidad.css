@@ -118,6 +118,32 @@
     background: linear-gradient(135deg, #a93226, #d44a16);
 }
 
+.Profile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.Profile-button--amigo {
+    background: linear-gradient(135deg, #2e7d32, #43a047);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+    cursor: default;
+}
+
+.Profile-button--amigo:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+    background: linear-gradient(135deg, #2e7d32, #43a047);
+}
+
+.Profile-button--solicitar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(192, 57, 43, 0.38);
+    background: linear-gradient(135deg, #a93226, #d44a16);
+}
+
 /* Tablets (≤768px) */
 @media (max-width: 768px) {
     .Comunidad-title {

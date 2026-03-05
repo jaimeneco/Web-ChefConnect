@@ -1,68 +1,208 @@
-/* .RecipePage {
-    padding: 40px;
-    font-family: Arial, sans-serif;
-    background-color: #a7d2cb;
-    color: #202020;
+.Receta-info {
+    padding: 100px 60px 60px 60px; /* padding-top 100px compensa el header fixed */
+    font-family: 'Nunito', sans-serif;
+    background-color: #FFF8F6;
+    color: #1A1A1A;
     min-height: 100vh;
 }
 
-.Recipe-title {
+.Receta-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     text-align: center;
-    font-size: 3rem;
-    color: #874c62;
-    margin-bottom: 30px;
+    font-size: 2.8rem;
+    color: #1A1A1A;
+    margin-bottom: 8px;
 }
 
-.Recipe-images {
+/* Línea decorativa roja bajo el título */
+.Receta-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(to right, #C0392B, #E8521A);
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+.Receta-images {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     justify-content: center;
-    margin-bottom: 30px;
-}
-
-.Recipe-images img {
-    width: 20%;
-    height: 600px;
-    border-radius: 10px;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
-}
-
-.Recipe-description {
-    font-size: 1.5rem;
-    margin: 20px auto;
-    width: 70%;
-    text-align: justify;
-    color: #874c62;
-}
-
-.Recipe-details {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
+    margin: 36px 0;
     flex-wrap: wrap;
 }
 
-.Recipe-ingredients,
-.Recipe-time {
-    background-color: #f2d388;
-    padding: 20px;
-    border-radius: 12px;
-    width: 300px;
-    margin: 10px;
-    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
+.Receta-images img {
+    width: 22%;
+    min-width: 180px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.Recipe-ingredients h2,
-.Recipe-time h2 {
-    color: #874c62;
-    margin-bottom: 10px;
+.Receta-images img:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(192, 57, 43, 0.18);
 }
 
-.Recipe-ingredients ul {
-    padding-left: 20px;
+.Receta-description {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0 auto 40px auto;
+    width: 60%;
+    text-align: left;
+    color: #444444;
+    background-color: #ffffff;
+    border-left: 4px solid #C0392B;
+    padding: 20px 28px;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
-.Recipe-ingredients li {
-    margin-bottom: 6px;
-} */
+.Receta-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+/* Quitar el flex/margin-top suelto de dificultad */
+.Receta-dificultad {
+    display: block;
+    margin-top: 0;
+}
+
+.Receta-ingredients,
+.Receta-time,
+.Receta-dificultad {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    width: 280px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    border: 1px solid #f0e8e6;
+    border-top: 3px solid #C0392B;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Receta-ingredients:hover,
+.Receta-time:hover,
+.Receta-dificultad:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(192, 57, 43, 0.12);
+}
+
+.Receta-ingredients h2,
+.Receta-time h2,
+.Receta-dificultad h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #C0392B;
+    margin-bottom: 14px;
+}
+
+.Receta-ingredients ul {
+    padding-left: 18px;
+}
+
+.Receta-ingredients li {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: #444444;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.Receta-time p,
+.Receta-dificultad p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+/* Receta no encontrada */
+.Receta-notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.Receta-notFound h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1A1A1A;
+}
+
+.Receta-notFound p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    color: #6B6B6B;
+}
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+    .Receta-info {
+        padding: 90px 30px 40px 30px;
+    }
+
+    .Receta-title {
+        font-size: 2.2rem;
+    }
+
+    .Receta-images img {
+        width: 44%;
+    }
+
+    .Receta-description {
+        width: 85%;
+        font-size: 1rem;
+    }
+
+    .Receta-ingredients,
+    .Receta-time,
+    .Receta-dificultad {
+        width: 44%;
+    }
+}
+
+/* Móviles (≤ 480px) */
+@media (max-width: 480px) {
+    .Receta-info {
+        padding: 80px 16px 32px 16px;
+    }
+
+    .Receta-title {
+        font-size: 1.8rem;
+    }
+
+    .Receta-images img {
+        width: 80%;
+        min-width: unset;
+    }
+
+    .Receta-description {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 16px 20px;
+    }
+
+    .Receta-ingredients,
+    .Receta-time,
+    .Receta-dificultad {
+        width: 100%;
+    }
+}

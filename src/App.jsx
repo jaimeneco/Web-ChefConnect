@@ -8,9 +8,6 @@ import { RecetaPage } from './pages/single-receta/SingleReceta.jsx'
 import { PerfilPage } from './pages/perfil/Perfil.jsx'
 
 
-
-
-
 function App() {
   return (
         <BrowserRouter>
@@ -20,8 +17,8 @@ function App() {
               <Route path='/home' element={<HomePage />} />
               <Route path='/recetas' element={<RecetasPage />} />
               <Route path='/comunidad' element={<ComunidadPage />} />
-              <Route path='/receta' element={<RecetaPage />} />
-              <Route path='/perfil' element={<PerfilPage />} />
+              <Route path='/receta/:slug' element={<RecetaPage />} />
+              <Route path='/perfil/:slug' element={<PerfilPage />} />
 
 
             </Routes>
