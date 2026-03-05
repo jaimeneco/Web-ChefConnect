@@ -144,6 +144,18 @@
     background: linear-gradient(135deg, #a93226, #d44a16);
 }
 
+.Profile-button--enviada {
+    background: linear-gradient(135deg, #555555, #777777);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: default;
+}
+
+.Profile-button--enviada:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #555555, #777777);
+}
+
 /* Tablets (≤768px) */
 @media (max-width: 768px) {
     .Comunidad-title {

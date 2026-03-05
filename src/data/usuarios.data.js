@@ -164,7 +164,7 @@ export const USUARIOS = [
         slug: "malena-jimenez",
         nombre: "Malena Jiménez",
         alias: "@malena.pasta",
-        avatar: "/imgs/img-perfiles/img5.png",
+        avatar: "/imgs/img-perfiles/img3.png",
         ubicacion: "Málaga, España",
         miembro: "Abril 2023",
         bio: "La pasta es mi religión 🍝. Italiana de corazón aunque nací en Málaga. Hago la pasta fresca a mano cada domingo.",
